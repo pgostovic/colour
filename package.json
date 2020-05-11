@@ -1,0 +1,54 @@
+{
+  "name": "@phnq/colour",
+  "version": "1.0.0",
+  "description": "Colour utilities",
+  "main": "index.js",
+  "module": "index.es.js",
+  "jsnext:main": "index.es.js",
+  "scripts": {
+    "preinstall": "scripts/preinstall.sh",
+    "postdist": "rimraf dist/__tests__; ts-node --project scripts/tsconfig.json scripts/postdist",
+    "dist": "rollup -c rollup.ts",
+    "clean": "rimraf dist",
+    "release:patch": "npm version patch; npm run dist; cd dist; npm publish",
+    "release:minor": "npm version minor; npm run dist; cd dist; npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgostovic/colour.git"
+  },
+  "keywords": [
+    "colour",
+    "color",
+    "hex",
+    "hsl",
+    "rgb",
+    "rgba"
+  ],
+  "author": "Patrick Gostovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgostovic/colour/issues"
+  },
+  "homepage": "https://github.com/pgostovic/colour#readme",
+  "devDependencies": {
+    "@types/node": "^13.13.5",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.31.0",
+    "@typescript-eslint/parser": "^2.31.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.9.1",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {}
+}
